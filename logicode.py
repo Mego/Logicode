@@ -1,18 +1,9 @@
 import sys
 from random import randint
-
-# File access and creation
-code_name = raw_input("File: ")
-
-try:
-    logicode_file = open(code_name + ".lgc", "r")
-except IOError:
-    logicode_file = open(code_name + ".lgc", "w")
-    sys.exit()
-
+import fileinput
 
 # Initialising variables
-code = (logicode_file.read()).split("\n")
+code = '\n'.join(fileinput.input())
 
 circuits = []
 circuit_names = []
